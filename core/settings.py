@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'subjects.apps.SubjectsConfig',
     'rest_framework',
+    'tasks',
 ]
 
 MIDDLEWARE = [
