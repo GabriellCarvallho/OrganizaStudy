@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'subjects.apps.SubjectsConfig',
     'rest_framework',
     'tasks',
+    'review',
+    'notes',
 ]
 
 MIDDLEWARE = [
