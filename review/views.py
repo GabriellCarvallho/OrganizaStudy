@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import viewsets, permissions
-from .models import Deck, FlashCard
-from .serializers import DeckSerializer, FlashCardSerializer
+from .models import Deck, Flashcard
+from .serializers import DeckSerializer, FlashcardSerializer
 
 
 class DeckViewSet(viewsets.ModelViewSet):
@@ -22,10 +22,10 @@ class DeckViewSet(viewsets.ModelViewSet):
 
 
 class FlashcardViewSet(viewsets.ModelViewSet):
-    serializer_class = FlashCardSerializer
+    serializer_class = FlashcardSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
 
     def get_queryset(self):
-        return FlashCard.objects.filter(deck__user=self.request.user)
+        return Flashcard.objects.filter(deck__user=self.request.user)
