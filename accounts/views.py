@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import get_user_model
 
+
+User = get_user_model()
 
 def login_view(request):
     if request.method == 'POST':
@@ -12,3 +15,24 @@ def login_view(request):
             return redirect('/dashboard/')
         return render(request, 'accounts/login.html', {'error': 'Usuário ou senha incorretos'})
     return render(request, 'accounts/login.html')
+
+
+def register_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        if password1 != password2:
+            return render(request, 'accounts/register.html', {'error': 'As senhas não coincidem'})
+
+        if User.objects.filter(username=username).exists():
+            return render(request, 'accounts/register.html', {'error': 'Usuário já existe'})
+
+        user = User.objects.create_user(username=username, email=email, password=password1)
+        login(request, user)
+        return redirect('/dashboard/')
+
+    return render(request, 'accounts/register.html')
+    
