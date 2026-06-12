@@ -148,3 +148,10 @@ STATIC_URL = "static/"
 
 
 ALLOWED_HOSTS = ['organizastudy-production.up.railway.app', 'localhost', '127.0.0.1']
+
+
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
