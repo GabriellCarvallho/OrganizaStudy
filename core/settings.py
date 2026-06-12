@@ -156,3 +156,6 @@ CSRF_TRUSTED_ORIGINS = ['https://organizastudy-production.up.railway.app']
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
