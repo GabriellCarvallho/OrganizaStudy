@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import get_user_model
-
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
@@ -35,4 +35,10 @@ def register_view(request):
         return redirect('/dashboard/')
 
     return render(request, 'accounts/register.html')
+
+
+
+@login_required
+def dashboard_view(request):
+    return render(request, 'dashboard/index.html')
     

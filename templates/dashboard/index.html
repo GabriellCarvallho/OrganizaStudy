@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrganizaStudy — Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-name">OrganizaStudy</span>
+                    <span class="logo-sub">Plataforma de estudos</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/dashboard/" class="nav-item active">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Dashboard
+                </a>
+                <a href="/disciplinas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Disciplinas
+                </a>
+                <a href="/tarefas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    Tarefas
+                </a>
+                <a href="/metas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    Metas
+                </a>
+                <a href="/cronograma/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Cronograma
+                </a>
+                <a href="/revisao/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.5"/></svg>
+                    Revisão
+                </a>
+                <a href="/assistente/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Assistente IA
+                </a>
+                <a href="/estatisticas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    Estatísticas
+                </a>
+                <a href="/configuracoes/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    Configurações
+                </a>
+            </nav>
+
+            <div class="sidebar-pro">
+                <div class="pro-badge">Plano Pro</div>
+                <p>Desbloqueie estatísticas avançadas e integrações.</p>
+                <button class="pro-btn">Fazer upgrade</button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+            <!-- Topbar -->
+            <header class="topbar">
+                <input type="search" placeholder="Pesquisar disciplinas, tarefas, materiais..." class="search">
+                <div class="topbar-right">
+                    <button class="notif-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </button>
+                    <div class="avatar">GS</div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <div class="page-header">
+                    <div>
+                        <h1>Bom dia, Gabriel</h1>
+                        <p>Vamos continuar seus estudos? Você está com uma sequência ativa.</p>
+                    </div>
+                    <button class="btn-primary">+ Nova sessão</button>
+                </div>
+
+                <!-- Métricas -->
+                <div class="metrics">
+                    <div class="metric-card">
+                        <span class="metric-label">HORAS ESTUDADAS</span>
+                        <span class="metric-value">48h</span>
+                        <span class="metric-sub">+12% vs mês anterior</span>
+                        <div class="metric-icon blue">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">TAREFAS CONCLUÍDAS</span>
+                        <span class="metric-value">82</span>
+                        <span class="metric-sub">93% de conclusão</span>
+                        <div class="metric-icon green">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">METAS ATINGIDAS</span>
+                        <span class="metric-value">12</span>
+                        <span class="metric-sub">3 ativas no momento</span>
+                        <div class="metric-icon purple">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">SEQUÊNCIA DE ESTUDOS</span>
+                        <span class="metric-value">15 dias</span>
+                        <span class="metric-sub">Recorde: 23 dias</span>
+                        <div class="metric-icon orange">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disciplinas + Tarefas -->
+                <div class="bottom-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h2>Disciplinas em andamento</h2>
+                                <p>Acompanhe o progresso de cada matéria</p>
+                            </div>
+                            <a href="/disciplinas/" class="ver-todas">Ver todas →</a>
+                        </div>
+                        <div class="subjects-grid">
+                            <div class="subject-card">
+                                <div class="subject-top">
+                                    <div class="subject-color blue-bar"></div>
+                                    <div>
+                                        <strong>Português</strong>
+                                        <span>Próximo: Resolver 20 questões</span>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <span>Progresso</span><span>78%</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill blue-fill" style="width:78%"></div></div>
+                            </div>
+                            <div class="subject-card">
+                                <div class="subject-top">
+                                    <div class="subject-color red-bar"></div>
+                                    <div>
+                                        <strong>Direito Constitucional</strong>
+                                        <span>Próximo: Ler Art. 5º — incisos</span>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <span>Progresso</span><span>54%</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill red-fill" style="width:54%"></div></div>
+                            </div>
+                            <div class="subject-card">
+                                <div class="subject-top">
+                                    <div class="subject-color green-bar"></div>
+                                    <div>
+                                        <strong>Banco de Dados</strong>
+                                        <span>Próximo: Normalização 3FN</span>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <span>Progresso</span><span>86%</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill green-fill" style="width:86%"></div></div>
+                            </div>
+                            <div class="subject-card">
+                                <div class="subject-top">
+                                    <div class="subject-color orange-bar"></div>
+                                    <div>
+                                        <strong>Programação</strong>
+                                        <span>Próximo: Estruturas em TypeScript</span>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <span>Progresso</span><span>42%</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill orange-fill" style="width:42%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Próximas tarefas</h2>
+                        </div>
+                        <div class="tasks-list">
+                            <div class="task-item">
+                                <span class="task-dot blue-dot"></span>
+                                <div>
+                                    <strong>Resolver 20 questões de Português</strong>
+                                    <span class="task-meta">Português · Hoje, 14:00</span>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <span class="task-dot purple-dot"></span>
+                                <div>
+                                    <strong>Revisar diagramas UML</strong>
+                                    <span class="task-meta">Engenharia · Hoje, 16:30</span>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <span class="task-dot green-dot"></span>
+                                <div>
+                                    <strong>Estudar Banco de Dados — JOINs</strong>
+                                    <span class="task-meta">BD · Amanhã, 09:00</span>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <span class="task-dot red-dot"></span>
+                                <div>
+                                    <strong>Ler Capítulo 4 — Constitucional</strong>
+                                    <span class="task-meta">Direito · Sex, 11:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
