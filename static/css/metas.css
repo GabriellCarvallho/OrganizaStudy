@@ -1,0 +1,74 @@
+.metas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.meta-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.meta-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.meta-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.green-bg { background: #16a34a; }
+
+.meta-header h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.meta-header span {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.badge-concluida {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.meta-progress-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.meta-percent {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.meta-detail {
+    font-size: 12px;
+    color: #64748b;
+    align-self: flex-end;
+}

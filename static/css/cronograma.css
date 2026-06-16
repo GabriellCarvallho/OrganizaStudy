@@ -1,0 +1,150 @@
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cal-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.cal-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sessions-badge {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.cal-views {
+    display: flex;
+    gap: 4px;
+}
+
+.view-btn {
+    padding: 6px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: white;
+    font-size: 13px;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.view-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.cal-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cal-day-header {
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.day-name {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.day-num {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.today-num {
+    color: #2563eb;
+}
+
+.hoje-badge {
+    background: #2563eb;
+    color: white;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-left: 4px;
+}
+
+.cal-session {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cal-session span { opacity: 0.8; }
+.cal-session strong { font-size: 12px; }
+
+.blue-session { background: #dbeafe; color: #1e40af; }
+.red-session { background: #fee2e2; color: #991b1b; }
+.green-session { background: #dcfce7; color: #166534; }
+.orange-session { background: #ffedd5; color: #9a3412; }
+.purple-session { background: #ede9fe; color: #5b21b6; }
+
+.resumo-grid {
+    display: flex;
+    gap: 32px;
+    margin-top: 12px;
+}
+
+.resumo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resumo-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.resumo-item strong {
+    display: block;
+    font-size: 13px;
+    color: #0f172a;
+}
+
+.resumo-item span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+}

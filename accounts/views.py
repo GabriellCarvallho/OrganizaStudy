@@ -41,4 +41,51 @@ def register_view(request):
 @login_required
 def dashboard_view(request):
     return render(request, 'dashboard/index.html')
+
+
+@login_required
+def subjects_view(request):
+    return render(request, 'subjects/index.html')
+
+
     
+@login_required
+def tarefas_view(request):
+    return render(request, 'tarefas/index.html')
+
+
+
+
+@login_required
+def revisao_view(request):
+    return render(request, 'revisao/index.html')
+
+
+
+
+@login_required
+def estatisticas_view(request):
+    return render(request, 'estatisticas/index.html')
+
+
+
+@login_required
+def assistente_view(request):
+    return render(request, 'assistente/index.html')
+
+
+@login_required
+def configuracoes_view(request):
+    return render(request, 'configuracoes/index.html')
+
+
+
+@login_required
+def metas_view(request):
+    return render(request, 'metas/index.html')
+
+
+
+@login_required
+def cronograma_view(request):
+    return render(request, 'cronograma/index.html')

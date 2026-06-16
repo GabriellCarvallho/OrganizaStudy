@@ -1,0 +1,79 @@
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.card-sub {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.disc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.disc-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.disc-row span:first-child {
+    width: 110px;
+    flex-shrink: 0;
+}
+
+.disc-bar {
+    flex: 1;
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.disc-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.disc-row span:last-child {
+    width: 30px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.insight-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.insight-icon {
+    font-size: 20px;
+}
+
+.insight-card strong {
+    font-size: 13px;
+    color: #0f172a;
+}
+
+.insight-card span {
+    font-size: 12px;
+    color: #64748b;
+}

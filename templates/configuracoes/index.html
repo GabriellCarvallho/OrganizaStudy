@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrganizaStudy — Configurações</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/configuracoes.css' %}">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div>
+                    <span class="logo-name">OrganizaStudy</span>
+                    <span class="logo-sub">Plataforma de estudos</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/dashboard/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Dashboard
+                </a>
+                <a href="/disciplinas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Disciplinas
+                </a>
+                <a href="/tarefas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    Tarefas
+                </a>
+                <a href="/metas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    Metas
+                </a>
+                <a href="/cronograma/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Cronograma
+                </a>
+                <a href="/revisao/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.5"/></svg>
+                    Revisão
+                </a>
+                <a href="/assistente/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Assistente IA
+                </a>
+                <a href="/estatisticas/" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    Estatísticas
+                </a>
+                <a href="/configuracoes/" class="nav-item active">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    Configurações
+                </a>
+            </nav>
+            <div class="sidebar-pro">
+                <div class="pro-badge">Plano Pro</div>
+                <p>Desbloqueie estatísticas avançadas e integrações.</p>
+                <button class="pro-btn">Fazer upgrade</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <input type="search" placeholder="Pesquisar disciplinas, tarefas, materiais..." class="search">
+                <div class="topbar-right">
+                    <button class="notif-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </button>
+                    <div class="avatar">GS</div>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="page-header">
+                    <div>
+                        <h1>Configurações</h1>
+                        <p>Personalize sua experiência no OrganizaStudy</p>
+                    </div>
+                </div>
+
+                <div class="config-layout">
+                    <div class="config-menu">
+                        <button class="config-menu-item active" onclick="mostrar('perfil')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Perfil
+                        </button>
+                        <button class="config-menu-item" onclick="mostrar('senha')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Alterar senha
+                        </button>
+                        <button class="config-menu-item" onclick="mostrar('aparencia')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                            Aparência
+                        </button>
+                        <button class="config-menu-item" onclick="mostrar('notificacoes')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            Notificações
+                        </button>
+                        <button class="config-menu-item" onclick="mostrar('integracoes')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                            Integrações
+                        </button>
+                    </div>
+
+                    <div class="config-content">
+                        <div id="perfil" class="config-section">
+                            <div class="section-header">
+                                <h2>Perfil</h2>
+                                <p>Informações públicas e dados da conta</p>
+                            </div>
+                            <div class="avatar-section">
+                                <div class="avatar-big">GS</div>
+                                <div>
+                                    <button class="btn-secondary">Alterar foto</button>
+                                    <p>PNG ou JPG, até 2MB</p>
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Nome</label>
+                                    <input type="text" value="Gabriel Silva">
+                                </div>
+                                <div class="form-group">
+                                    <label>E-mail</label>
+                                    <input type="email" value="gabriel@exemplo.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Curso</label>
+                                    <input type="text" value="Engenharia de Software">
+                                </div>
+                                <div class="form-group">
+                                    <label>Instituição</label>
+                                    <input type="text" value="Universidade Federal">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn-secondary">Cancelar</button>
+                                <button class="btn-primary">Salvar alterações</button>
+                            </div>
+                        </div>
+
+                        <div id="aparencia" class="config-section" style="display:none">
+                            <div class="section-header">
+                                <h2>Aparência</h2>
+                                <p>Personalize o visual do sistema</p>
+                            </div>
+                            <div class="toggle-row">
+                                <div>
+                                    <strong>Tema claro</strong>
+                                    <p>Mudará a aparência do app</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="notificacoes" class="config-section" style="display:none">
+                            <div class="section-header">
+                                <h2>Notificações</h2>
+                                <p>Gerencie seus avisos e lembretes</p>
+                            </div>
+                            <div class="toggle-row">
+                                <div>
+                                    <strong>Lembretes de tarefas</strong>
+                                    <p>Receba avisos antes do prazo</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-row">
+                                <div>
+                                    <strong>Resumo semanal</strong>
+                                    <p>E-mail toda segunda com seu progresso</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-row">
+                                <div>
+                                    <strong>Sequência de estudos</strong>
+                                    <p>Avisos para manter a sua streak</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="senha" class="config-section" style="display:none">
+                            <div class="section-header">
+                                <h2>Alterar senha</h2>
+                                <p>Mantenha sua conta segura</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Senha atual</label>
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <div class="form-group">
+                                <label>Nova senha</label>
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <div class="form-group">
+                                <label>Confirmar nova senha</label>
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn-primary">Alterar senha</button>
+                            </div>
+                        </div>
+
+                        <div id="integracoes" class="config-section" style="display:none">
+                            <div class="section-header">
+                                <h2>Integrações</h2>
+                                <p>Conecte com outras plataformas</p>
+                            </div>
+                            <div class="integration-item">
+                                <div>
+                                    <strong>Google Calendar</strong>
+                                    <p>Sincronize seu cronograma</p>
+                                </div>
+                                <button class="btn-secondary">Conectar</button>
+                            </div>
+                            <div class="integration-item">
+                                <div>
+                                    <strong>Notion</strong>
+                                    <p>Importe suas anotações</p>
+                                </div>
+                                <button class="btn-secondary">Conectar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function mostrar(secao) {
+            document.querySelectorAll('.config-section').forEach(s => s.style.display = 'none');
+            document.querySelectorAll('.config-menu-item').forEach(b => b.classList.remove('active'));
+            document.getElementById(secao).style.display = 'block';
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
