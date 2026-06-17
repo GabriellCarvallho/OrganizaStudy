@@ -70,14 +70,14 @@ class StreakView(APIView):
 class StatsView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
-
     def get(self, request):
         sessions = StudySession.objects.filter(user=request.user)
-        totalMinutes = sum(s.durationMinutes for s in sessions)
+        totalMinutes = sum(s.duration_minutes for s in sessions)
         totalHours = round(totalMinutes / 60, 1)
+        streak, _ = Streak.objects.get_or_create(user=request.user)
         return Response({
             'total_hours': totalHours,
-            'total_Sessions': sessions.count(),
-            'current_streak': Streak.streakCurrent,
-            'longest_streak': Streak.StreakLongest,
+            'total_sessions': sessions.count(),
+            'current_streak': streak.streakCurrent,
+            'longest_streak': streak.StreakLongest,
         })

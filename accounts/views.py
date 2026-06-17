@@ -31,8 +31,7 @@ def register_view(request):
             return render(request, 'accounts/register.html', {'error': 'Usuário já existe'})
 
         user = User.objects.create_user(username=username, email=email, password=password1)
-        login(request, user)
-        return redirect('/dashboard/')
+        return redirect('/login/')
 
     return render(request, 'accounts/register.html')
 

@@ -234,5 +234,19 @@
             </div>
         </main>
     </div>
+
+    <script src="{% static 'js/api.js' %}"></script>
+    <script>
+        async function carregarDashboard() {
+            const response = await apiFetch('/analytics/stats/');
+            if (!response) return;
+            const data = await response.json();
+
+            const metricValues = document.querySelectorAll('.metric-value');
+            metricValues[0].textContent = data.total_hours + 'h';
+            metricValues[3].textContent = data.current_streak + ' dias';
+        }
+        carregarDashboard();
+    </script>
 </body>
 </html>
