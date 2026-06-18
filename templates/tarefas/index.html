@@ -173,5 +173,14 @@
             </div>
         </main>
     </div>
+    <script src="{% static 'js/api.js' %}"></script>
+    <script> async function carregarTarefas(){
+        const response = await apiFetch('/tasks/')
+        if (!response) return;
+        const data = await response.json();
+        console.log(data);
+        }
+        carregarTarefas();
+        </script>
 </body>
 </html>
