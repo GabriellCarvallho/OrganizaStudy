@@ -174,13 +174,41 @@
         </main>
     </div>
     <script src="{% static 'js/api.js' %}"></script>
-    <script> async function carregarTarefas(){
-        const response = await apiFetch('/tasks/')
-        if (!response) return;
-        const data = await response.json();
-        console.log(data);
+    <script>
+        const prioridadeLabel = { high: 'Alta', medium: 'Média', low: 'Baixa' };
+        const prioridadeClasse = { high: 'high', medium: 'medium', low: 'low' };
+        const statusLabel = { pending: 'Pendente', in_progress: 'Em Progresso', done: 'Concluída' };
+        const statusClasse = { pending: 'pending', in_progress: 'pending', done: 'done' };
+
+        async function carregarTarefas() {
+            const response = await apiFetch('/tasks/');
+            if (!response) return;
+            const tarefas = await response.json();
+
+            const tbody = document.querySelector('.tasks-table tbody');
+            tbody.innerHTML = '';
+
+            if (tarefas.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:32px;color:#94a3b8">Nenhuma tarefa cadastrada ainda.</td></tr>';
+                return;
+            }
+
+            tarefas.forEach(t => {
+                const prazo = t.due_date ? new Date(t.due_date).toLocaleDateString('pt-BR') : '—';
+                const disciplina = t.subject ? t.subject : '—';
+                tbody.innerHTML += `
+                    <tr>
+                        <td class="task-name">${t.title}</td>
+                        <td><span class="disc-badge">${disciplina}</span></td>
+                        <td><span class="priority-badge ${prioridadeClasse[t.priority]}">${prioridadeLabel[t.priority]}</span></td>
+                        <td>${prazo}</td>
+                        <td><span class="status-badge ${statusClasse[t.status]}">${statusLabel[t.status]}</span></td>
+                        <td>···</td>
+                    </tr>`;
+            });
         }
+
         carregarTarefas();
-        </script>
+    </script>
 </body>
 </html>
