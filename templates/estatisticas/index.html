@@ -189,37 +189,20 @@
         </main>
     </div>
 
-    <script>
-        new Chart(document.getElementById('barChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-                datasets: [{
-                    data: [5, 7, 9, 6, 8, 4, 3],
-                    backgroundColor: '#bfdbfe',
-                    borderColor: '#2563eb',
-                    borderWidth: 2,
-                    borderRadius: 6,
-                }]
-            },
-            options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
-        });
+<script src="{% static 'js/api.js' %}"></script>
+<script>
+    async function carregarEstatisticas() {
+        const response = await apiFetch('/analytics/stats/');
+        if (!response) return;
+        const data = await response.json();
 
-        new Chart(document.getElementById('lineChart'), {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
-                datasets: [{
-                    data: [30, 38, 35, 42, 45, 48],
-                    borderColor: '#2563eb',
-                    backgroundColor: 'rgba(37,99,235,0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: '#2563eb',
-                }]
-            },
-            options: { plugins: { legend: { display: false } } }
-        });
-    </script>
+        const metricValues = document.querySelectorAll('.metric-value');
+        metricValues[0].textContent = data.total_hours + 'h';
+        metricValues[1].textContent = data.total_sessions > 0 ? data.total_sessions + '%' : '0%';
+        metricValues[3].textContent = data.current_streak + ' dias';
+    }
+
+    carregarEstatisticas();
+</script>
 </body>
 </html>

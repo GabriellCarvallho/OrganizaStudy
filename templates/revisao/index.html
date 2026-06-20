@@ -209,30 +209,54 @@
         </main>
     </div>
 
-    <script>
-        let virado = false;
-        const resposta = "Uma tabela está na 3FN quando está na 2FN e todos os atributos não-chave dependem diretamente da chave primária, sem dependências transitivas.";
+<script src="{% static 'js/api.js' %}"></script>
+<script>
+    async function carregarRevisao() {
+        const response = await apiFetch('/decks/');
+        if (!response) return;
+        const decks = await response.json();
 
-        function virarCard() {
-            const content = document.getElementById('flashcard-content');
-            const label = document.querySelector('.flashcard-label');
-            const rating = document.getElementById('rating');
-            if (!virado) {
-                content.textContent = resposta;
-                label.textContent = 'RESPOSTA';
-                rating.style.display = 'flex';
-                virado = true;
-            } else {
-                content.textContent = 'O que é a Terceira Forma Normal (3FN) em modelagem de banco de dados?';
-                label.textContent = 'PERGUNTA — CLIQUE PARA VIRAR';
-                rating.style.display = 'none';
-                virado = false;
-            }
+        // Atualiza contador de decks ativos
+        const metricValues = document.querySelectorAll('.metric-value');
+        metricValues[1].textContent = decks.length;
+
+        // Atualiza lista de decks
+        const decksList = document.querySelector('.decks-list');
+        decksList.innerHTML = '';
+
+        const cores = ['green-bar', 'blue-bar', 'red-bar', 'orange-bar', 'purple-bar'];
+        const coresFill = ['green-fill', 'blue-fill', 'red-fill', 'orange-fill', 'purple-fill'];
+
+        if (decks.length === 0) {
+            decksList.innerHTML = '<p style="color:#94a3b8;padding:16px">Nenhum deck cadastrado ainda.</p>';
+        } else {
+            decks.forEach((deck, i) => {
+                const corBar = cores[i % cores.length];
+                const corFill = coresFill[i % coresFill.length];
+                const totalCards = deck.flashcards ? deck.flashcards.length : 0;
+                decksList.innerHTML += `
+                    <div class="deck-item">
+                        <div class="deck-color ${corBar}"></div>
+                        <div class="deck-info">
+                            <strong>${deck.name}</strong>
+                            <span>${totalCards} cartões</span>
+                            <div class="progress-bar"><div class="progress-fill ${corFill}" style="width:0%"></div></div>
+                        </div>
+                        <span class="deck-pending">0 pendentes</span>
+                    </div>`;
+            });
         }
 
-        function avaliar(nivel) {
-            alert('Avaliado como: ' + nivel + '\nPróximo cartão carregando...');
+        // Carrega primeiro flashcard pendente se existir
+        const todosFlashcards = decks.flatMap(d => d.flashcards || []);
+        if (todosFlashcards.length > 0) {
+            const card = todosFlashcards[0];
+            document.getElementById('flashcard-content').textContent = card.question;
+            document.querySelector('.card-counter').textContent = `1 / ${todosFlashcards.length}`;
         }
-    </script>
+    }
+
+    carregarRevisao();
+</script>
 </body>
 </html>
